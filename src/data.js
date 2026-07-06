@@ -177,12 +177,16 @@ export const PRODUCTS = [
   {
     slug: "advanced-spectating-system",
     name: "Advanced Spectating System",
-    description: "Smooth Spectating System (DRAG AND DROP!). Includes cinematic camera, depth-of-field, and smooth transitions between players.",
+    description: "(DRAG AND DROP!) Smooth Spectating System ",
     tag: "Roblox System",
     price: "5$",
     cover: "/products/Advanced Spectating System.png",
     buyUrl: null,
     content: [
+      {
+        type: "paragraph",
+        text: "A pre-built spectating camera system for Roblox games. Players can spectate other players smoothly, with a clean UI and scalable design.",
+      },
       { type: "heading", text: "What's included" },
       {
         type: "list",
