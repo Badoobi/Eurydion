@@ -4,7 +4,7 @@
 
 Building scalable, future-proof systems that let millions of users play without a problem. I love turning wild ideas into realities.
 
-**Portfolio:** [badoobi.github.io/Eurydion](https://badoobi.github.io/Eurydion/)
+**Portfolio:** [badoobi.github.io](https://badoobi.github.io/)
 
 ---
 
