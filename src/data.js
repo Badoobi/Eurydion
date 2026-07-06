@@ -27,7 +27,7 @@ export const COMMUNITIES = [
 ];
 
 export const METRICS = [
-  { value: "2020", label: "Developer since" },
+  { value: "6 Years", label: "Developing Experience" },
   { value: "300+", label: "Successful commissions" },
   { value: "4.9/5", label: "10+ verified ratings · RoDevs" },
   { value: "10M+", label: "Total visits contributed" },
