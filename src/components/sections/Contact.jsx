@@ -35,9 +35,9 @@ function CopyField({ label, value }) {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-14">
 
-      <h2 className="reveal mt-6 max-w-3xl text-5xl font-extrabold tracking-tight sm:text-6xl">
+      <h2 className="reveal  max-w-3xl text-5xl font-extrabold tracking-tight sm:text-6xl">
         Let&rsquo;s build something together.
       </h2>
 
