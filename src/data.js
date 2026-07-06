@@ -101,7 +101,7 @@ export const PROJECTS = [
     tag: "Roblox Experience",
     year: "2026",
     role: "Commissioned Developer",
-    cover: "public/projects/Block Jump.png", // e.g. "/projects/aether-cover.jpg"
+    cover: "projects/Block Jump.png", // e.g. "/projects/aether-cover.jpg"
     content: [
       {
         type: "paragraph",
@@ -124,7 +124,7 @@ export const PROJECTS = [
           "Shop for Boosts - Spend Robux on coin bundles and items through an in-game shop powered by developer products.",
         ],
       },
-      { type: "image", src: "public/projects/Block Jump2.png", caption: "Falling block pattern debug view" },
+      { type: "image", src: "/projects/Block Jump2.png", caption: "Falling block pattern debug view" },
       { type: "heading", text: "Stacks" },
       {
         type: "list",
