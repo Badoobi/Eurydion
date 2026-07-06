@@ -15,13 +15,13 @@ export default function Hero() {
       </h1>
 
       <p className="reveal mt-8 max-w-2xl text-xl font-medium text-neutral-700 sm:text-2xl dark:text-neutral-300">
-        Roblox full-stack game developer with over 6 years of scripting
+        Roblox full-stack game and web developer with over 6 years of scripting
         experience.
       </p>
 
       <p className="reveal mt-5 max-w-2xl text-base leading-relaxed text-neutral-500 dark:text-neutral-400">
         Building scalable and future-proof systems that let millions of users
-        play without a problem. I love turning wild ideas into realities.
+        play without a problem. I love turning wild ideas into realities. Hire me to create your next Roblox game or website.
       </p>
 
       <div className="reveal mt-10">

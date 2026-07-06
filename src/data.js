@@ -147,6 +147,120 @@ export const PROJECTS = [
       },
     ],
   },
+  {
+    slug: "gamejam-belowus",
+    name: "Below Us",
+    description: "You awaken in a cave, shrouded in darkness; Even when standing on solid ground, the place feels unfamiliar and alienating.",
+    tag: "Roblox Game Jam 2026",
+    year: "2026",
+    role: "Lead Developer",
+    cover: "/projects/BelowUsThumb.png", // e.g. "/projects/aether-cover.jpg"
+    content: [
+      {
+        type: "paragraph",
+        text: "A psychological horror adventure game where you escape the monster by climbing up, facing your fears, and navigating through a series of terrifying environments.",
+      },
+      { type: "heading", text: "The Theme" },
+      {
+        type: "paragraph",
+        text: "Height.",
+      },
+      { type: "image", src: "/projects/BelowusGame.png", caption: "Inside the Game" },
+
+      { type: "heading", text: "How it works" },
+      {
+        type: "list",
+        items: [
+          "Navigate thru the cave - Move carefully through the dark and unfamiliar environment.",
+          "Avoid traps and obstacles - The cave is filled with hazards that can impede your progress.",
+          "Uncover the Truth - Investigate the cave, piece together clues, and discover what lurks in the darkness.",
+          "Complete the Objective - Each area has its own challenge that must be overcome before you can continue.",
+          "Return to Safety - Once the area is completed, find your way back to a safe zone.",
+          "Escape the Entity.",
+        ],
+      },
+      { type: "image", src: "/projects/BelowUsThumb2.png", caption: "Inside the Game" },
+
+      {
+        type: "quote",
+        text: "Developed with an excellent team.",
+      },
+       {
+        type: "list",
+        items: [
+          "Lead Developer - @Eurydion",
+          "Creative Director - @Buttons_LexiannePNAS",
+          "Map Design and Modeller - @AngkolDimo & @pawensi",
+          "UI Design - @mulanjam",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "devilsburger",
+    name: "Devil's Burger",
+    description: "[IN DEVELOPMENT]",
+    tag: "KolehiDevs Productiion",
+    year: "2026",
+    role: "Lead Developer",
+    cover: "/projects/DevilsBurger.png", // e.g. "/projects/aether-cover.jpg"
+    content: [
+      {
+        type: "paragraph",
+        text: "A psychological horror game where you are [redacted] ",
+      },
+      {
+        type: "quote",
+        text: "In Development. For Inquiries, contact me on Discord.",
+      },
+      {
+        type: "list",
+        items: [
+          "Lead Developer - @Eurydion",
+          "Creative Director - @Buttons_LexiannePNAS",
+          "Map Design and Modeller - @AngkolDimo & @pawensi",
+          "UI Design - @mulanjam",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "myportfolio",
+    name: "Personal Portfolio",
+    description: "Dynamic and interactive showcase of my projects and skills through website.",
+    tag: "Website Development",
+    year: "2026",
+    role: "Lead Developer",
+    cover: "/projects/Portfolio Website.png", // e.g. "/projects/aether-cover.jpg"
+    content: [
+      {
+        type: "paragraph",
+        text: "Clean and modern design with a focus on usability and aesthetics.",
+      },
+      { type: "heading", text: "Purpose" },
+      {
+        type: "paragraph",
+        text: "Showcasing my projects and skills in an engaging and interactive manner.",
+      },
+      { type: "heading", text: "How it works" },
+      {
+        type: "list",
+        items: [
+          "ReactJS - Dynamic and interactive user interface built with ReactJS.",
+          "TailwindCSS - Clean and modern design with a focus on usability and aesthetics.",
+          "Responsive Design - Optimized for all devices and screen sizes.",
+          "Vite - Fast and efficient build tool for modern web development.",
+          "Github Pages - Hosting and deployment of the website on Github Pages.",
+        ],
+      },
+      { type: "image", src: "/projects/Portfolio Website2.png", caption: "Content of Projects" },
+
+      {
+        type: "quote",
+        text: "Developed with love, Contact me if you want to hire me for your website.",
+      },
+    ],
+  },
 ];
 
 /** Look up a single project by its slug. Returns undefined if not found. */
