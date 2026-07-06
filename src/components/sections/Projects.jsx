@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PROJECTS } from "../../data";
+import { asset } from "../../lib/utils";
 
 function Thumbnail({ project }) {
   return (
     <div className="relative aspect-16/10 w-full overflow-hidden border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900/40">
       {project.cover ? (
         <img
-          src={project.cover}
+          src={asset(project.cover)}
           alt=""
           className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
         />

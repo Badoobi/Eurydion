@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getProject } from "../data";
+import { asset } from "../lib/utils";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { scrollToId, scrollToTop } from "../lib/smoothScroll";
 
@@ -57,7 +58,7 @@ function Block({ block }) {
       return (
         <figure className="reveal mt-8">
           <img
-            src={block.src}
+            src={asset(block.src)}
             alt={block.caption || ""}
             className="w-full border border-neutral-200 dark:border-neutral-800"
           />
@@ -179,7 +180,7 @@ export default function ProjectPage() {
       <div className="reveal mt-10 overflow-hidden border border-neutral-200 dark:border-neutral-800">
         {project.cover ? (
           <img
-            src={project.cover}
+            src={asset(project.cover)}
             alt={`${project.name} cover`}
             className="aspect-video w-full object-cover"
           />
