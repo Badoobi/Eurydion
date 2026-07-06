@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { NAV_LINKS } from "../data";
 
 /**
@@ -7,8 +8,13 @@ import { NAV_LINKS } from "../data";
  */
 export function useActiveSection() {
   const [active, setActive] = useState(NAV_LINKS[0].id);
+  const { pathname } = useLocation();
 
   useEffect(() => {
+    // Only the home page renders the observed sections. On other routes there's
+    // nothing to watch, so skip setting up the observer.
+    if (pathname !== "/") return;
+
     const sections = NAV_LINKS.map((l) => document.getElementById(l.id)).filter(
       Boolean
     );
@@ -29,7 +35,7 @@ export function useActiveSection() {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return active;
 }
