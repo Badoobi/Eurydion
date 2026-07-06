@@ -76,6 +76,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Star-shaped theme transition (View Transitions API).
+   Disable the default cross-fade — the star clip-path reveal is driven
+   from useTheme.js. The new (incoming) theme is clipped on top. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 2;
+}
+
 /* Lenis smooth scroll */
 html.lenis,
 html.lenis body {
