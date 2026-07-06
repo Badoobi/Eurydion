@@ -126,7 +126,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Kirby is a very nice guy he has finished my commision in under 24 hours and the process was smooth and i was satisified with my product",
+      "Eury is a very nice guy he has finished my commision in under 24 hours and the process was smooth and i was satisified with my product",
     name: "Tapzy",
     role: "Client · Undisclosed",
     rating: 5,
