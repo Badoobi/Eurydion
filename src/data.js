@@ -96,11 +96,11 @@ export const PROJECTS = [
   },
   {
     slug: "commission-blockjump",
-    name: "Block Jump",
+    name: "Block Jump [Commission]",
     description: "A fast-paced Roblox survival game where the floor is lava and the sky is falling. Outrun the rising tide, dodge the crashing blocks, and be the last one standing.",
     tag: "Roblox Experience",
-    year: "2025",
-    role: "Solo Developer",
+    year: "2026",
+    role: "Commissioned Developer",
     cover: "public/projects/Block Jump.png", // e.g. "/projects/aether-cover.jpg"
     content: [
       {
@@ -125,16 +125,18 @@ export const PROJECTS = [
         ],
       },
       { type: "image", src: "public/projects/Block Jump2.png", caption: "Falling block pattern debug view" },
-      { type: "heading", text: "Tech Stack" },
+      { type: "heading", text: "Stacks" },
       {
         type: "list",
         items: [
-          "Luau - Core gameplay scripting across server and client.",
-          "Roblox Studio - Engine, world building, and physics simulation.",
+          "Luau OOP - Core gameplay scripting across server and client.",
+          "Building - Engine, world building, and physics simulation.",
           "DataStoreService - Persistent saving of player coins and wins.",
           "RemoteEvents - Client-server communication for status, rounds, and screen shake.",
           "TweenService - Smooth animations for falling blocks, camera, and effects.",
-          "Developer Products - Robux-based monetization powering the in-game shop.",
+          "Marketstore Service  - Robux-based monetization powering the in-game shop.",
+          "Leaderboards - Persistent player stats and wins displayed on a leaderboard.",
+          "Daily Rewards - A daily login system that rewards players with coins and boosts.",
         ],
       },
 
