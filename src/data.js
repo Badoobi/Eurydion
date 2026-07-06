@@ -6,6 +6,7 @@ import kolehiDevsIcon from "./assets/Kolehidevs.png";
 export const NAV_LINKS = [
   { id: "home", label: "Home" },
   { id: "projects", label: "Projects" },
+  { id: "products", label: "Products" },
   { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
 ];
@@ -151,6 +152,58 @@ export const PROJECTS = [
 /** Look up a single project by its slug. Returns undefined if not found. */
 export function getProject(slug) {
   return PROJECTS.find((p) => p.slug === slug);
+}
+
+/*
+ * PRODUCTS
+ * --------
+ * Ready-made items / assets for sale. Displayed in a compact grid, and each
+ * one opens its own page at /products/<slug> (same write-up system as projects).
+ * How to add / edit a product:
+ *
+ * 1. Copy one of the objects below and change the fields.
+ * 2. `slug` is the URL — it becomes /products/<slug>. Keep it lowercase
+ *    with dashes and unique.
+ * 3. Images: drop your image files into the `public/projects/` folder, then
+ *    reference them with an absolute path, e.g. "/projects/my-product.jpg".
+ *    Leave `cover` as null to show the default pattern thumbnail.
+ * 4. `price` is free-form text, e.g. "R$ 500", "$10", or "Free".
+ * 5. `buyUrl` (optional) adds a "Get it" button on the product page that opens
+ *    in a new tab. Leave it as null to hide the button.
+ * 6. `content` is the write-up shown on the product page. It uses the same
+ *    block types as projects (heading, paragraph, image, youtube, list, quote).
+ */
+export const PRODUCTS = [
+  {
+    slug: "advanced-spectating-system",
+    name: "Advanced Spectating System",
+    description: "Smooth Spectating System (DRAG AND DROP!). Includes cinematic camera, depth-of-field, and smooth transitions between players.",
+    tag: "Roblox System",
+    price: "5$",
+    cover: "/products/Advanced Spectating System.png",
+    buyUrl: null,
+    content: [
+      { type: "heading", text: "What's included" },
+      {
+        type: "list",
+        items: [
+          "Pre-Built Spectating Camera Script",
+          "Clean UI and Scalable",
+        ],
+      },
+      { type: "youtube", src: "https://www.youtube.com/shorts/rCwmCnaUsLo", caption: "Showcase Video" },
+
+      {
+        type: "quote",
+        text: "Contact my discord if you're interested.",
+      },
+    ],
+  },
+];
+
+/** Look up a single product by its slug. Returns undefined if not found. */
+export function getProduct(slug) {
+  return PRODUCTS.find((p) => p.slug === slug);
 }
 
 export const TESTIMONIALS = [

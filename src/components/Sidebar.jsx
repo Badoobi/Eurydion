@@ -52,6 +52,16 @@ const NAV_ICONS = {
       />
     </svg>
   ),
+  products: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+      <path
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 8l9-4 9 4-9 4-9-4zM3 8v8l9 4 9-4V8M12 12v8"
+      />
+    </svg>
+  ),
   testimonials: (props) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
       <path
