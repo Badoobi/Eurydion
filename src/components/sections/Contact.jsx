@@ -36,9 +36,6 @@ function CopyField({ label, value }) {
 export default function Contact() {
   return (
     <section id="contact" className="py-24">
-      <p className="reveal font-mono text-xs tracking-[0.25em] text-neutral-400 uppercase dark:text-neutral-500">
-        Contact
-      </p>
 
       <h2 className="reveal mt-6 max-w-3xl text-5xl font-extrabold tracking-tight sm:text-6xl">
         Let&rsquo;s build something together.
