@@ -94,7 +94,56 @@ export const PROJECTS = [
       },
     ],
   },
-  
+  {
+    slug: "commission-blockjump",
+    name: "Block Jump",
+    description: "A fast-paced Roblox survival game where the floor is lava and the sky is falling. Outrun the rising tide, dodge the crashing blocks, and be the last one standing.",
+    tag: "Roblox Experience",
+    year: "2025",
+    role: "Solo Developer",
+    cover: "public/projects/Block Jump.png", // e.g. "/projects/aether-cover.jpg"
+    content: [
+      {
+        type: "paragraph",
+        text: "Block Jump is a round-based multiplayer survival game built in Roblox. Players are dropped onto an arena where lava steadily rises from below while randomized tetris-block patterns slam down from above. Stay alive, reach the finish line, and earn coins and wins to climb the leaderboard.",
+      },
+      { type: "heading", text: "The Theme" },
+      {
+        type: "paragraph",
+        text: "Survive the floor, fear the sky.",
+      },
+      { type: "heading", text: "How it works" },
+      {
+        type: "list",
+        items: [
+          "Join the Round - Every match kicks off after a short intermission, dropping all participants onto the arena floor.",
+          "Watch the Sky - Randomized block patterns telegraph their landing zone before crashing down, crushing anyone caught underneath.",
+          "Outrun the Lava - Lava rises across the map, shrinking the safe space and forcing constant movement toward the finish line.",
+          "Survive and Score - Stay alive to earn coins, and be the last one standing to bank a win, all saved through persistent player data.",
+          "Spectate the Chaos - Eliminated players can spectate survivors with a cinematic depth-of-field camera until the next round begins.",
+          "Shop for Boosts - Spend Robux on coin bundles and items through an in-game shop powered by developer products.",
+        ],
+      },
+      { type: "image", src: "public/projects/Block Jump2.png", caption: "Falling block pattern debug view" },
+      { type: "heading", text: "Tech Stack" },
+      {
+        type: "list",
+        items: [
+          "Luau - Core gameplay scripting across server and client.",
+          "Roblox Studio - Engine, world building, and physics simulation.",
+          "DataStoreService - Persistent saving of player coins and wins.",
+          "RemoteEvents - Client-server communication for status, rounds, and screen shake.",
+          "TweenService - Smooth animations for falling blocks, camera, and effects.",
+          "Developer Products - Robux-based monetization powering the in-game shop.",
+        ],
+      },
+
+      {
+        type: "quote",
+        text: "Developed Solo | Full-stack Roblox gameplay, data persistence, and monetization systems built from scratch.",
+      },
+    ],
+  },
 ];
 
 /** Look up a single project by its slug. Returns undefined if not found. */
