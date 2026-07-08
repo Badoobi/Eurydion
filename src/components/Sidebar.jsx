@@ -62,6 +62,16 @@ const NAV_ICONS = {
       />
     </svg>
   ),
+  tutorials: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+      <path
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M5 4.5h11.5A2.5 2.5 0 0 1 19 7v12.5H7.5A2.5 2.5 0 0 1 5 17V4.5Zm0 12.5a2.5 2.5 0 0 1 2.5-2.5H19M9 8h6"
+      />
+    </svg>
+  ),
   testimonials: (props) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
       <path

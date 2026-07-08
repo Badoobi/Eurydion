@@ -2,6 +2,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 import Hero from "../components/sections/Hero";
 import Projects from "../components/sections/Projects";
 import Products from "../components/sections/Products";
+import Tutorials from "../components/sections/Tutorials";
 import Testimonials from "../components/sections/Testimonials";
 import Communities from "../components/sections/Communities";
 import Contact from "../components/sections/Contact";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Projects />
       <Products />
+      <Tutorials />
       <Testimonials />
       <Communities />
       <Contact />

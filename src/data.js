@@ -7,6 +7,7 @@ export const NAV_LINKS = [
   { id: "home", label: "Home" },
   { id: "projects", label: "Projects" },
   { id: "products", label: "Products" },
+  { id: "tutorials", label: "Tutorials" },
   { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
 ];
@@ -353,6 +354,15 @@ export const PRODUCTS = [
 export function getProduct(slug) {
   return PRODUCTS.find((p) => p.slug === slug);
 }
+
+/*
+ * TUTORIALS
+ * ---------
+ * YouTube-first guides displayed beneath Products and on /tutorials.
+ * Add a YouTube video ID (the 11 characters after /watch?v= or /shorts/).
+ */
+export const TUTORIALS = [
+];
 
 export const TESTIMONIALS = [
   {
