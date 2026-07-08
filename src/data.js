@@ -317,6 +317,36 @@ export const PRODUCTS = [
       },
     ],
   },
+  {
+    slug: "custom-movement-system",
+    name: "Dead by Daylight Movement System",
+    description: "Momentum-based Movement, with Sprinting, vaulting, and head-to-direction tilting",
+    tag: "Roblox System",
+    price: "NOT FOR SALE",
+    cover: "/products/Custom Movement System.png",
+    buyUrl: null,
+    content: [
+      {
+        type: "paragraph",
+        text: "Smooth momentum-based movement system for Roblox games, inspired by Dead by Daylight",
+      },
+      { type: "heading", text: "What's included" },
+      {
+        type: "list",
+        items: [
+          "Modular Movement System",
+          "Advanced Momentum-based movement",
+          "Sprinting, Vaulting, and Head-to-direction tilting",
+        ],
+      },
+      { type: "youtube", src: "https://www.youtube.com/shorts/C_b_RI2w8Lg", caption: "Showcase Video" },
+
+      {
+        type: "quote",
+        text: "Contact my discord if you're interested.",
+      },
+    ],
+  },
 ];
 
 /** Look up a single product by its slug. Returns undefined if not found. */
