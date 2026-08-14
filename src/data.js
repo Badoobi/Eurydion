@@ -397,5 +397,5 @@ export const TESTIMONIALS = [
 ];
 
 export const CONTACT = {
-  discord: "@radioheadslover69",
+  discord: "eurydion",
 };
