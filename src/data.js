@@ -398,4 +398,9 @@ export const TESTIMONIALS = [
 
 export const CONTACT = {
   discord: "eurydion",
+  email: "eurydion@gmail.com",
+  instagram: "@eurydion",
+  instagramUrl: "https://instagram.com/eurydion",
+  youtube: "@Eurydion",
+  youtubeUrl: "https://www.youtube.com/@Eurydion",
 };

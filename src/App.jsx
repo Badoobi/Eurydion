@@ -8,6 +8,7 @@ import Loader from "./components/Loader";
 import Home from "./pages/Home";
 import ProjectPage from "./pages/ProjectPage";
 import ProductPage from "./pages/ProductPage";
+import Links from "./pages/Links";
 import NotFound from "./pages/NotFound";
 import { useTheme } from "./hooks/useTheme";
 import { setLenis } from "./lib/smoothScroll";
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="/products/:slug" element={<ProductPage />} />
+          <Route path="/links" element={<Links />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

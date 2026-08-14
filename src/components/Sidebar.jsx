@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { NAV_LINKS, CONTACT } from "../data";
+import { InstagramIcon, YoutubeIcon } from "./SocialIcons";
 import { useActiveSection } from "../hooks/useActiveSection";
 import { scrollToId, scrollToTop } from "../lib/smoothScroll";
 
@@ -128,6 +129,32 @@ function ContactBlurb() {
           {CONTACT.discord}
         </strong>
       </p>
+      <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+        Email:<br></br>
+        <strong className="font-bold break-all text-neutral-900 dark:text-neutral-100">
+          {CONTACT.email}
+        </strong>
+      </p>
+      <div className="mt-4 flex items-center gap-2">
+        <a
+          href={CONTACT.instagramUrl}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Instagram"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:text-neutral-100"
+        >
+          <InstagramIcon className="h-4 w-4" />
+        </a>
+        <a
+          href={CONTACT.youtubeUrl}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="YouTube"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:text-neutral-100"
+        >
+          <YoutubeIcon className="h-4 w-4" />
+        </a>
+      </div>
     </div>
   );
 }
