@@ -16,8 +16,6 @@ import {
 } from "@/lib/creator-data";
 import { siteLinks } from "@/lib/site-config";
 
-export const revalidate = 900;
-
 export const metadata: Metadata = {
   title: "Work | Eurydion",
   description: "Browse Eurydion's Roblox worlds, development films, and short-form experiments.",

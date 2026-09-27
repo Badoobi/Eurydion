@@ -61,3 +61,18 @@ Run the standard checks:
 npm run lint
 npm run build
 ```
+
+## GitHub Pages deployment
+
+The site is exported as static HTML and deployed by
+`.github/workflows/static.yml` whenever `main` changes. The workflow also runs
+every 15 minutes so the exported Roblox and YouTube content stays current
+without exposing API credentials to browsers.
+
+Add `YOUTUBE_API_KEY` as a GitHub Actions repository secret under
+**Settings -> Secrets and variables -> Actions**. The YouTube section degrades
+to its existing empty state when the secret is absent. Roblox uses public APIs
+and does not require a secret.
+
+The custom domain remains configured through the repository's GitHub Pages
+settings and its existing DNS record.

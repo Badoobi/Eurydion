@@ -84,7 +84,7 @@ export function SiteLoader() {
         document.querySelectorAll<HTMLImageElement>('img[data-critical-image="true"]'),
       );
 
-      return criticalImages.length > 0 && criticalImages.every(isImageReady);
+      return criticalImages.length === 0 || criticalImages.every(isImageReady);
     };
 
     const check = () => {

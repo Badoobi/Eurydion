@@ -1,0 +1,63 @@
+name: Deploy Next.js to Pages
+
+on:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      YOUTUBE_CHANNEL_ID: UCZ88rtXWEJdSCJzN8C2fofg
+      YOUTUBE_CHANNEL_URL: https://www.youtube.com/@Eurydion
+      YOUTUBE_SHORTS_URL: https://www.youtube.com/@Eurydion/shorts
+      ROBLOX_PROFILE_URL: https://www.roblox.com/users/31053640/profile
+      ROBLOX_GAME_PLACE_IDS: 11380769866,10400440200,100989019560808
+      ROBLOX_GAME_URLS: https://www.roblox.com/games/11380769866/Chipeo-Paradise,https://www.roblox.com/games/10400440200/That-One-OMORI-Game,https://www.roblox.com/games/100989019560808/Knife-or-Die
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

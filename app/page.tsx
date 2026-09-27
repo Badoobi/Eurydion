@@ -15,8 +15,6 @@ import {
   type YouTubeVideo,
 } from "@/lib/creator-data";
 
-export const revalidate = 900;
-
 function FeaturedGame({ game }: { game: RobloxGame }) {
   return (
     <a
