@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eurydion
 
-## Getting Started
+A Next.js creator portfolio that surfaces Eurydion's Roblox games, YouTube uploads, Shorts, and community links inside a cinematic editorial experience.
 
-First, run the development server:
+The interface keeps its source data live through the Roblox and YouTube integrations,
+uses locally served `next/font` assets, and includes an accessible scene-based loader
+with a reduced-motion path.
+
+The experience is divided into two routes:
+
+- `/` — a short identity, proof, and featured-work landing page
+- `/works` — the complete Worlds, Build Films, and Short Cuts catalog
+
+Fine-pointer devices receive a restrained custom cursor and optional click feedback.
+Touch, keyboard, and reduced-motion paths retain their native behavior.
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a local env file with the media sources you want to surface:
 
-## Learn More
+```bash
+YOUTUBE_API_KEY=...
+YOUTUBE_CHANNEL_ID=UCZ88rtXWEJdSCJzN8C2fofg
+YOUTUBE_CHANNEL_URL=https://www.youtube.com/@Eurydion
+YOUTUBE_SHORTS_URL=https://www.youtube.com/@Eurydion/shorts
 
-To learn more about Next.js, take a look at the following resources:
+ROBLOX_PROFILE_URL=https://www.roblox.com/users/31053640/profile
+ROBLOX_GAME_PLACE_IDS=11380769866,10400440200,100989019560808
+ROBLOX_GAME_URLS=https://www.roblox.com/games/11380769866/Chipeo-Paradise,https://www.roblox.com/games/10400440200/That-One-OMORI-Game,https://www.roblox.com/games/100989019560808/Knife-or-Die
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Roblox ID support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The homepage now treats the supplied Roblox IDs as **place IDs** and resolves their universe IDs automatically by reading each public game page before requesting metadata and thumbnails.
 
-## Deploy on Vercel
+For backwards compatibility, `ROBLOX_UNIVERSE_IDS` is still accepted. If a value in `ROBLOX_UNIVERSE_IDS` is actually a place ID, the loader falls back to the same place-resolution flow.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### YouTube Shorts support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The YouTube Data API does not expose a reliable "this upload is a Short" field. The integration now:
+
+1. fetches uploads from the official YouTube Data API v3
+2. probes sub-3-minute watch pages server-side
+3. uses the canonical YouTube URL to decide whether an item belongs in the Videos shelf or the Shorts shelf
+4. upgrades Shorts thumbnails to portrait variants when YouTube provides them
+
+## Verification
+
+Run the standard checks:
+
+```bash
+npm run lint
+npm run build
+```

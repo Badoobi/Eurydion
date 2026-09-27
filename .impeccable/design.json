@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T00:00:00.000Z",
+  "title": "Design System: Eurydion",
+  "extensions": {
+    "colorMeta": {
+      "lavender-primary": {
+        "role": "primary",
+        "displayName": "Wayfinder Lavender",
+        "canonical": "#8c7ab8",
+        "tonalRamp": ["#241d35", "#3c3155", "#574776", "#716197", "#8c7ab8", "#aa9aca", "#c8bcdd", "#eee9f5"]
+      },
+      "lavender-deep": {
+        "role": "primary",
+        "displayName": "Deep Lavender Ink",
+        "canonical": "#655784",
+        "tonalRamp": ["#1d1927", "#302940", "#493d60", "#655784", "#8172a0", "#9f91bb", "#c2b8d4", "#eeeaf3"]
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Open Parchment",
+        "canonical": "#f3eee5",
+        "tonalRamp": ["#27231e", "#453f37", "#675f54", "#8b8174", "#afa698", "#cfc7bb", "#e6dfd4", "#f8f4ed"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Journal Ink",
+        "canonical": "#292733",
+        "tonalRamp": ["#17161d", "#292733", "#44414f", "#625e6e", "#817c8b", "#a39eaa", "#c9c5cd", "#f0edf2"]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night Field",
+        "canonical": "#34384f",
+        "tonalRamp": ["#191b27", "#282b3d", "#3d415b", "#575d7c", "#767c9b", "#9ba0b9", "#c4c7d6", "#eff0f4"]
+      },
+      "soft-gold": {
+        "role": "secondary",
+        "displayName": "Soft Gold",
+        "canonical": "#c6aa78",
+        "tonalRamp": ["#2b2418", "#4a3c27", "#6b5738", "#8e744c", "#b09263", "#c6aa78", "#ddc99f", "#f5ead2"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Journey Display", "purpose": "Hero statement only." },
+      "headline": { "displayName": "Editorial Headline", "purpose": "Large closing statements." },
+      "title": { "displayName": "Story Title", "purpose": "Sections and media names." },
+      "body": { "displayName": "Interface Body", "purpose": "Descriptions and navigation." },
+      "label": { "displayName": "Quiet Label", "purpose": "Metadata and compact actions." }
+    },
+    "shadows": [
+      { "name": "ambient-card", "value": "0 4px 14px rgba(43, 38, 52, 0.035)", "purpose": "Barely separates a media card from parchment." },
+      { "name": "menu-lift", "value": "0 14px 34px rgba(24, 24, 34, 0.22)", "purpose": "Places the temporary mobile menu above the hero." }
+    ],
+    "motion": [
+      { "name": "ease-responsive", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Buttons, cards, underlines, and icon response." },
+      { "name": "press", "value": "140ms scale(0.97)", "purpose": "Immediate feedback on pressable controls." },
+      { "name": "hero-arrival", "value": "660ms translateY(16px) to 0", "purpose": "The single orchestrated page entrance." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "430px" },
+      { "name": "mobile", "value": "760px" },
+      { "name": "tablet", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main watch action on illustrated surfaces.",
+      "html": "<button class=\"ds-button-primary\">Watch my videos</button>",
+      "css": ".ds-button-primary { min-height:49px; border:0; border-radius:5px; padding:0 24px; background:#8c7ab8; color:#fff; font:500 18px 'Cormorant Garamond', Georgia, serif; transition:transform 140ms cubic-bezier(.23,1,.32,1), background-color 160ms ease; } .ds-button-primary:hover { transform:translateY(-2px); background:#655784; } .ds-button-primary:focus-visible { outline:2px solid #d4c3f0; outline-offset:4px; } .ds-button-primary:active { transform:scale(.97); }"
+    },
+    {
+      "name": "Secondary Hero Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A quiet secondary action over cinematic artwork.",
+      "html": "<button class=\"ds-button-secondary\">Play my games</button>",
+      "css": ".ds-button-secondary { min-height:49px; border:1px solid rgba(255,249,239,.72); border-radius:5px; padding:0 24px; background:transparent; color:#fffaf2; font:500 18px 'Cormorant Garamond', Georgia, serif; transition:transform 140ms cubic-bezier(.23,1,.32,1), background-color 160ms ease; } .ds-button-secondary:hover { transform:translateY(-2px); background:rgba(255,255,255,.08); border-color:#fff; } .ds-button-secondary:focus-visible { outline:2px solid #d4c3f0; outline-offset:4px; } .ds-button-secondary:active { transform:scale(.97); }"
+    },
+    {
+      "name": "Game Card",
+      "kind": "card",
+      "refersTo": "game-card",
+      "description": "An image-first Roblox world with real description and statistics.",
+      "html": "<article class=\"ds-game-card\"><div class=\"ds-game-media\"></div><h3>World name</h3><p>Short description from Roblox.</p></article>",
+      "css": ".ds-game-card { overflow:hidden; border:1px solid rgba(67,61,77,.16); border-radius:8px; padding-bottom:14px; background:rgba(248,243,235,.74); color:#292733; box-shadow:0 4px 14px rgba(43,38,52,.035); font-family:Inter,Arial,sans-serif; } .ds-game-media { aspect-ratio:16/7; background:#e9e1d5; } .ds-game-card h3 { margin:14px 14px 4px; font:600 22px/1.05 'Cormorant Garamond',Georgia,serif; } .ds-game-card p { margin:0 14px; color:#716b78; font-size:12px; } .ds-game-card:hover { border-color:rgba(101,87,132,.34); }"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "description": "A serif section title connected to its action by a hairline rule.",
+      "html": "<div class=\"ds-section-heading\"><h2>Roblox games</h2><span></span><a href=\"#\">View profile</a></div>",
+      "css": ".ds-section-heading { display:grid; grid-template-columns:auto minmax(40px,1fr) auto; align-items:center; gap:20px; color:#292733; } .ds-section-heading h2 { margin:0; font:500 30px/1 'Cormorant Garamond',Georgia,serif; } .ds-section-heading span { height:1px; background:rgba(67,61,77,.16); } .ds-section-heading a { color:#655784; font:400 16px 'Cormorant Garamond',Georgia,serif; text-underline-offset:5px; } .ds-section-heading a:hover { text-decoration:underline; } .ds-section-heading a:focus-visible { outline:2px solid #8c7ab8; outline-offset:4px; }"
+    },
+    {
+      "name": "Floating Navigation",
+      "kind": "nav",
+      "description": "Serif navigation that sits directly on the hero artwork.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-active\" href=\"#\">Home</a><a href=\"#\">Roblox games</a><a href=\"#\">YouTube</a></nav>",
+      "css": ".ds-nav { display:flex; gap:40px; padding:20px; background:#34384f; color:rgba(255,249,239,.78); font:400 17px 'Cormorant Garamond',Georgia,serif; } .ds-nav a { position:relative; color:inherit; text-decoration:none; } .ds-nav a:hover,.ds-nav .ds-active { color:#fffaf2; } .ds-nav .ds-active::after { position:absolute; right:0; bottom:-10px; left:0; height:1px; content:''; background:#d4c3f0; } .ds-nav a:focus-visible { outline:2px solid #d4c3f0; outline-offset:4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Duskbound Journal",
+    "overview": "Eurydion feels like opening an illustrated travel journal at sunset. A single painterly environment carries the emotion, while the interface recedes into calm typography, thin rules, and honest media. The system is spacious and nostalgic without becoming ornamental costume.",
+    "keyCharacteristics": [
+      "One cinematic, environment-first hero",
+      "Warm parchment content fields against a cool dusk image",
+      "Elegant serif display type paired with a quiet interface sans",
+      "Sparse lavender controls and hairline ornament",
+      "Real media and statistics, with designed empty and error states"
+    ],
+    "rules": [
+      { "name": "The Rare Lavender Rule", "body": "Lavender marks action and orientation. It never washes an entire reading surface.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Serif carries story and identity; sans carries operation and data. Do not introduce a third typographic voice.", "section": "typography" },
+      { "name": "The Continuous Journey Rule", "body": "Sections change density and temperature, but never detach into floating page-level cards.", "section": "layout" },
+      { "name": "The Image-First Depth Rule", "body": "The illustration and thumbnails provide depth. Interface chrome does not imitate physical materials.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do let one decisive illustration carry the page's fantasy atmosphere.",
+      "Do keep real Roblox and YouTube media as the focus of content sections.",
+      "Do preserve the dusk-to-parchment-to-night rhythm across future surfaces.",
+      "Do use short, interruptible interaction transitions and honor reduced motion."
+    ],
+    "donts": [
+      "Don't add neon borders, animated gradients, or dashboard chrome.",
+      "Don't use giant rounded pills or one radius for every object.",
+      "Don't add labels above headings merely to decorate the hierarchy.",
+      "Don't invent statistics, testimonials, or media to fill an API failure.",
+      "Don't cover cards with vines, flowers, grain, or fantasy decoration."
+    ]
+  }
+}
