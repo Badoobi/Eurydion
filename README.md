@@ -57,9 +57,12 @@ npm run lint
 npm run build
 ```
 
-## Deploy to Vercel
+## Deploy
 
-1. Import the repository in Vercel.
-2. Add the environment variables above under Project Settings -> Environment Variables.
-3. Keep the default Next.js build command: `npm run build`.
-4. Deploy. Vercel runs the route handler and Next.js image optimization automatically.
+Pushes to `main` deploy automatically to GitHub Pages at
+`https://eurydion.is-a.dev`. The workflow creates a static Next.js export and
+refreshes the Roblox data snapshot every ten minutes.
+
+For request-time Roblox revalidation instead, import the repository in Vercel,
+add the environment variables above, and keep the default `npm run build`
+command. Normal builds remain server-capable unless `NEXT_OUTPUT=export` is set.
