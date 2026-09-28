@@ -20,6 +20,12 @@ export type YouTubeVideo = {
   url: string;
 };
 
+type YouTubePresentation = {
+  kind: YouTubeVideoKind;
+  url: string;
+  shortThumbnailUrl?: string;
+};
+
 export type YouTubeContent = LoadState<YouTubeVideo> & {
   videos: YouTubeVideo[];
   shorts: YouTubeVideo[];
@@ -121,12 +127,34 @@ async function remoteAssetExists(url: string) {
   }
 }
 
-async function classifyYouTubeVideo(videoId: string, durationSeconds: number) {
+async function findShortThumbnail(videoId: string) {
+  const candidates = [
+    `https://i.ytimg.com/vi/${videoId}/oardefault.jpg`,
+    `https://i.ytimg.com/vi/${videoId}/oar2.jpg`,
+    `https://i.ytimg.com/vi/${videoId}/oar3.jpg`,
+  ];
+
+  for (const candidate of candidates) {
+    if (await remoteAssetExists(candidate)) return candidate;
+  }
+
+  return null;
+}
+
+async function classifyYouTubeVideo(
+  videoId: string,
+  durationSeconds: number,
+): Promise<YouTubePresentation> {
   const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
   const shortUrl = `https://www.youtube.com/shorts/${videoId}`;
 
   if (durationSeconds <= 0 || durationSeconds > 180) {
     return { kind: "video" as const, url: watchUrl };
+  }
+
+  const shortThumbnailUrl = await findShortThumbnail(videoId);
+  if (shortThumbnailUrl) {
+    return { kind: "short" as const, url: shortUrl, shortThumbnailUrl };
   }
 
   try {
@@ -152,18 +180,7 @@ async function resolveYouTubeThumbnail(
 ) {
   if (kind === "video") return fallbackUrl;
 
-  const candidates = [
-    `https://i.ytimg.com/vi/${videoId}/oardefault.jpg`,
-    `https://i.ytimg.com/vi/${videoId}/oar2.jpg`,
-    `https://i.ytimg.com/vi/${videoId}/oar3.jpg`,
-    `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
-  ];
-
-  for (const candidate of candidates) {
-    if (await remoteAssetExists(candidate)) return candidate;
-  }
-
-  return fallbackUrl;
+  return (await findShortThumbnail(videoId)) ?? fallbackUrl;
 }
 
 export async function getYouTubeContent(): Promise<YouTubeContent> {
@@ -251,7 +268,7 @@ export async function getYouTubeContent(): Promise<YouTubeContent> {
         thumbnailUrl: await resolveYouTubeThumbnail(
           video.id,
           presentation.kind,
-          video.thumbnailUrl,
+          presentation.shortThumbnailUrl ?? video.thumbnailUrl,
         ),
       } satisfies YouTubeVideo;
     }));
