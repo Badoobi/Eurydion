@@ -1,31 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
-import { CustomCursor } from "@/app/components/custom-cursor";
-import { InteractionSound } from "@/app/components/interaction-sound";
+import { Bangers, Space_Grotesk } from "next/font/google";
 import { PageMotion } from "@/app/components/page-motion";
-import { SiteLoader } from "@/app/components/site-loader";
 import "./globals.css";
 
-const sans = Manrope({
-  variable: "--font-sans",
+const sans = Space_Grotesk({
+  variable: "--font-space",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const display = Cormorant_Garamond({
-  variable: "--font-display",
+const display = Bangers({
+  variable: "--font-bangers",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Eurydion | Worlds, systems, and stories",
+  title: "Eurydion | Roblox worlds and films",
   description:
-    "Explore Eurydion's Roblox worlds, development films, and short-form experiments.",
+    "Play Eurydion's Roblox worlds and watch development films and short-form experiments.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a080d",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -35,10 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sans.variable} ${display.variable}`}
     >
       <body>
-        <SiteLoader />
         <PageMotion />
-        <CustomCursor />
-        <InteractionSound />
         {children}
       </body>
     </html>

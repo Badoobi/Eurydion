@@ -1,0 +1,49 @@
+{
+  "games": [
+    {
+      "name": "Chipeo Paradise",
+      "universeId": "4049540036",
+      "placeId": "11380769866",
+      "thumbnailPath": "/images/games/chipeo-paradise.png",
+      "description": "A bass-heavy car audio roleplay world built around cruising, custom setups, and community car meets.",
+      "order": 1,
+      "featured": true,
+      "status": "LIVE",
+      "fallback": {
+        "approval": 89,
+        "visits": 8364091,
+        "playing": 112
+      }
+    },
+    {
+      "name": "That One OMORI Game",
+      "universeId": "3793744369",
+      "placeId": "10400440200",
+      "thumbnailPath": "/images/games/that-one-omori-game.png",
+      "description": "A fan-made social roleplay world for exploring familiar places, collecting badges, and meeting other players.",
+      "order": 2,
+      "featured": false,
+      "status": "ARCHIVE",
+      "fallback": {
+        "approval": 97,
+        "visits": 2768695,
+        "playing": 0
+      }
+    },
+    {
+      "name": "Knife or Die",
+      "universeId": "9439392511",
+      "placeId": "100989019560808",
+      "thumbnailPath": "/images/games/knife-or-die.png",
+      "description": "A fast 14-player arena where the first sprint to the knife decides who controls the round.",
+      "order": 3,
+      "featured": false,
+      "status": "NEW",
+      "fallback": {
+        "approval": 78,
+        "visits": 8251512,
+        "playing": 19
+      }
+    }
+  ]
+}

@@ -28,11 +28,6 @@ export function PageMotion() {
         if (observed.has(element)) return;
         observed.add(element);
 
-        const items = element.querySelectorAll<HTMLElement>("[data-reveal-item]");
-        items.forEach((item, index) => {
-          item.style.setProperty("--reveal-delay", `${Math.min(index * 70, 280)}ms`);
-        });
-
         element.classList.add("reveal-managed");
 
         if (reducedMotion.matches) {
@@ -44,10 +39,10 @@ export function PageMotion() {
       });
     };
 
-    let prepareTimer = window.setTimeout(() => prepare(document), 500);
+    let prepareTimer = window.setTimeout(() => prepare(document), 0);
     const mutationObserver = new MutationObserver(() => {
       window.clearTimeout(prepareTimer);
-      prepareTimer = window.setTimeout(() => prepare(document), 350);
+      prepareTimer = window.setTimeout(() => prepare(document), 80);
     });
 
     mutationObserver.observe(document.body, { childList: true, subtree: true });

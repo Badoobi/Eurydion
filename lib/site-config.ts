@@ -25,4 +25,8 @@ export const siteLinks = {
     process.env.ROBLOX_PROFILE_URL?.trim() ||
     process.env.NEXT_PUBLIC_ROBLOX_PROFILE_URL?.trim() ||
     DEFAULT_ROBLOX_PROFILE_URL,
+  email:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim()
+      ? `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL.trim()}`
+      : "mailto:?subject=Hello%20Eurydion",
 };

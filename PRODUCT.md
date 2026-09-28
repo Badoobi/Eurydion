@@ -16,19 +16,19 @@ Eurydion is a personal creator hub that gathers real Roblox experiences, recent 
 
 ## Positioning
 
-This is not a generic link-in-bio page or a gaming dashboard. It presents modern creator content as a cinematic world-builder's reel, where atmosphere establishes the creator's point of view and real media stays immediate and easy to scan.
+This is not a generic link-in-bio page or a gaming dashboard. It is a direct, comic-style field guide to Eurydion's playable Roblox work and filmmaking process, with live proof visible before biography.
 
 ## Operating Context
 
-The landing page must establish Eurydion's name, fantasy world, and one clear path into the work within the first viewport. It stays identity-focused and intentionally short. A separate `/works` route owns the full Roblox and YouTube catalog. Both routes are powered by the project's YouTube and Roblox environment variables and must fail gracefully when an external service is unavailable.
+The single scrolling page places Roblox worlds directly below a slim sticky navbar. It then moves through live aggregate stats, YouTube films, Shorts, a compact development profile, and contact actions. Roblox data is fetched through a same-origin route and falls back to committed last-known values.
 
 ## Capabilities and Constraints
 
-The project uses Next.js App Router, React, TypeScript, and global CSS. YouTube API credentials remain server-only. Roblox universe IDs come from `ROBLOX_UNIVERSE_IDS`. Visible titles, images, dates, durations, ratings, visits, and player counts come from real APIs rather than invented examples.
+The project uses Next.js App Router, React, TypeScript, Tailwind CSS, and a small global design layer. YouTube API credentials remain server-only. Roblox universe and place IDs live in `games.config.json`; live visits, playing counts, and votes come from Roblox APIs through `/api/games`.
 
 ## Brand Commitments
 
-The visual world is cinematic editorial minimalism: an obsidian field, expansive fantasy imagery, high-contrast serif type, restrained amber and electric-violet accents, precise hairlines, and one authored motion sequence. A restrained custom cursor and optional click sound reinforce interactive targets on fine-pointer devices. It avoids neon gaming chrome, pill-heavy navigation, SaaS layouts, and copied franchise characters.
+The visual world is flat black-and-white comic print: heavy rules, hard offset shadows, halftone shading, bold display type, grayscale media that reveals color on hover, and direct platform actions. It avoids gradients, blur, glow, soft shadows, title-screen heroes, audio widgets, custom cursors, SaaS chrome, and copied franchise characters.
 
 ## Evidence on Hand
 
@@ -41,9 +41,8 @@ The visual world is cinematic editorial minimalism: an obsidian field, expansive
 
 ## Product Principles
 
-Let the work lead and the interface recede.
+Put playable work first.
 Make every number and thumbnail honest.
-Keep identity and catalog browsing on focused, separate routes.
-Give each page one dominant action and a short path to it.
-Use editorial scale and cinematic crops without sacrificing scanability.
+Keep the full showcase on one clear route.
+Use panel hierarchy instead of decorative chrome.
 Respect reduced motion, keyboard navigation, and mobile composition.
